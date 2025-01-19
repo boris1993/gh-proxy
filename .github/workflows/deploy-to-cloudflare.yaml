@@ -10,11 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
+      # Check out the code
       - uses: actions/checkout@v4
         with:
           ref: 'upstream'
-      - run: ls
-      # - name: Publish
-      #   uses: cloudflare/wrangler-action@v3
-      #   with:
-      #     apiToken: ${{ secrets.CF_API_TOKEN }}
+      # Check out the master branch for wrangler.toml
+      - uses: actions/checkout@v4
+        with:
+          ref: 'master'
+      - name: Publish
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
