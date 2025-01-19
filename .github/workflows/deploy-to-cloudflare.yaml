@@ -14,7 +14,6 @@ jobs:
         with:
           ref: 'upstream'
       - run: wget https://raw.githubusercontent.com/boris1993/gh-proxy/refs/heads/master/wrangler.toml
-      - run: ls
       - name: Publish
         uses: cloudflare/wrangler-action@v3
         with:
