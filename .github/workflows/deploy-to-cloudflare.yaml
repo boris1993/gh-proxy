@@ -13,7 +13,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: 'upstream'
-      - name: Publish
-        uses: cloudflare/wrangler-action@v3.13.0
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
+      - run: ls
+      # - name: Publish
+      #   uses: cloudflare/wrangler-action@v3
+      #   with:
+      #     apiToken: ${{ secrets.CF_API_TOKEN }}
