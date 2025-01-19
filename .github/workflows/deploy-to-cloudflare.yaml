@@ -14,11 +14,13 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: 'upstream'
+          path: upstream
       # Check out the master branch for wrangler.toml
       - uses: actions/checkout@v4
         with:
           ref: 'master'
-      - name: Publish
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
+      - run: ls
+      # - name: Publish
+      #   uses: cloudflare/wrangler-action@v3
+      #   with:
+      #     apiToken: ${{ secrets.CF_API_TOKEN }}
