@@ -10,7 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
+      # Check out the code
       - uses: actions/checkout@v4
+        with:
+          ref: 'upstream'
       - run: wget https://raw.githubusercontent.com/boris1993/gh-proxy/refs/heads/upstream/index.js
       - run: ls
       # - name: Publish
