@@ -3,7 +3,7 @@ name: Deploy to CloudFlare
 on:
   workflow_dispatch:
   push:
-    branches: ["master"]
+    branches: ["upstream"]
 
 jobs:
   deploy:
@@ -11,6 +11,8 @@ jobs:
     name: Deploy
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: 'upstream'
       - name: Publish
         uses: cloudflare/wrangler-action@v3.13.0
         with:
