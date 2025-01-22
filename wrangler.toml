@@ -6,3 +6,6 @@ account_id = "34018b4941d2988926ae8ac16f096d26"
 routes = [
     { pattern = "gh-proxy.555771.xyz", custom_domain = true },
 ]
+
+[observability]
+enabled = true
